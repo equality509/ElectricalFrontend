@@ -4,27 +4,25 @@ import "../App.css"
 
 interface Todo {
   id: number;
-  make: string;
-  model: string;
-  year: number;
-  color: string;
-  price: number;
+  projectName: string,
+  location: string,
+  numberOfWorkers: number,
+  manager: string,
 }
 
 const Index: React.FC = (props) => {
   const todos: Todo[] = useLoaderData() as Todo[];
 
   return <>
-   <h2 className='title'>Post Your Car</h2>
+   <h2 className='title'>Post Your Job</h2>
    <div className="flx">
   <div style={{textAlign: "center"}} className="frm">
      
       <Form action="/create" method="post" >
-          <input type="text" name="make" placeholder="make" />
-          <input type="text" name="model" placeholder="model"/>
-          <input type="text" name="year" placeholder="year"/>
-          <input type="text" name="color" placeholder="color"/>
-          <input type="number" name="price" placeholder="price"/>
+          <input type="text" name="projectName" placeholder="projectName" />
+          <input type="text" name="location" placeholder="location"/>
+          <input type="number" name="numberOfWorkers" placeholder="numberOfWorkers"/>
+          <input type="text" name="manager" placeholder="manager"/>
           <button>Create New Car</button>
       </Form>
   </div>
