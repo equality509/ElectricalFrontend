@@ -3,7 +3,7 @@ import Post from "../components/Post";
 import "../App.css"
 
 interface Todo {
-  id: number;
+  id: any;
   projectName: string,
   location: string,
   numberOfWorkers: number,
