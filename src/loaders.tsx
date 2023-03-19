@@ -10,7 +10,7 @@ export async function IndexLoader(){
 }
 
 export async function ShowLoader({params}){
-    const response = await fetch(url + params.id + "/")
+    const response = await fetch(url + "/" + params._id + "/")
     const data = await response.json()
     console.log("SHOW LOADER:", data)
     return data
