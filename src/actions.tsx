@@ -39,7 +39,7 @@ export async function UpdateAction({ request, params }) {
     };
   
     // request to update route in backend
-    await fetch(url + params.id + "/", {
+    await fetch(url + "/" + params.id + "/", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -53,10 +53,10 @@ export async function UpdateAction({ request, params }) {
 
   export async function DeleteAction({params}){
     //get the id
-    const id = params.id
+    const id = params._id
 
     // send request to delete
-    await fetch(url + id + "/", {
+    await fetch(url + "/" + id + "/", {
         method: "delete"
     })
 
