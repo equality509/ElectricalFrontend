@@ -7,11 +7,10 @@ export async function CreateAction({ request }) {
 
   // construct new todo
   const newTodo = {
-    make: formData.get("make"),
-    model: formData.get("model"),
-    year: formData.get("year"),
-    color: formData.get("color"),
-    price: formData.get("price"),
+    projectName: formData.get("projectName"),
+    numberOfWorkers: formData.get("numberOfWorkers"),
+    location: formData.get("location"),
+    manager: formData.get("manager"),
   };
 console.log(newTodo)
   // request to create route in backend
@@ -33,15 +32,14 @@ export async function UpdateAction({ request, params }) {
   
     // construct new todo
     const newTodo = {
-      make: formData.get("make"),
-      model: formData.get("model"),
-      year: formData.get("year"),
-      color: formData.get("color"),
-      price: formData.get("price"),
+      projectName: formData.get("projectName"),
+      numberOfWorkers: formData.get("numberOfWorkers"),
+      location: formData.get("location"),
+      manager: formData.get("manager"),
     };
   
     // request to update route in backend
-    await fetch(url + params.id + "/", {
+    await fetch(url + "/" + params.id + "/", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -55,10 +53,10 @@ export async function UpdateAction({ request, params }) {
 
   export async function DeleteAction({params}){
     //get the id
-    const id = params.id
+    const id = params._id
 
     // send request to delete
-    await fetch(url + id + "/", {
+    await fetch(url + "/" + id + "/", {
         method: "delete"
     })
 

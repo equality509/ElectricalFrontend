@@ -4,10 +4,14 @@ import Index from "./pages/Index"
 import Show from "./pages/Show"
 import { IndexLoader, ShowLoader } from "./loaders"
 import { CreateAction, DeleteAction, UpdateAction } from "./actions"
+import Navbar from "./components/Navbar"
+
+
 
 const router = createBrowserRouter(createRoutesFromElements(
     <>
-        <Route path="/" element={<App/>}>
+        <Route path="/" element={<div><Navbar/> <App/></div>}>
+
             <Route path="" element={<Index/>} loader={IndexLoader}/>
             <Route path="post/:id" element={<Show/>} loader={ShowLoader}/>
             <Route path="create" action={CreateAction}/>

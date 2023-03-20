@@ -11,18 +11,18 @@ const Post = (props) => {
     margin: "10px auto",
     width: "80%",
   };
+  console.log(post._id)
+
 
   return (
     <div style={div} className= "form-letters">
-      <Link to={`/post/${post.id}`}>
-        <h1>{post.make}</h1>
+      <Link to={`/post/${post._id}`}>
+        <h1>{post.projectName}</h1>
       </Link>
-      <h2 className="background">{post.model}</h2>
-      <h2 className="background">{post.year}</h2>
-      <h2 className="background">{post.color}</h2>
-      <h2 className="background">{post.price}</h2>
-      <h2 className="background">{post.image}</h2>
-
+      {/* <h2 className="background">{post.projectName}</h2> */}
+      <h2 className="background">{post.location}</h2>
+      <h2 className="background">{post.numberOfWorkers}</h2>
+      <h2 className="background">{post.manager}</h2>
     </div>
   );
 };

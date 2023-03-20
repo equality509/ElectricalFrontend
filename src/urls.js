@@ -1,3 +1,3 @@
-const url = "https://tes1-3imw.onrender.com/todos/"
+const url = "http://localhost:4001/projects"
 
 export default url

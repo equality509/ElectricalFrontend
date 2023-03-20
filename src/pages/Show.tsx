@@ -16,44 +16,39 @@ const Show = (props) => {
 
   return (
     <div style={div} >
-      <h1 className= "show-letters">{post.make}</h1>
-      <h2 className= "show-letters">{post.model}</h2>
+      <h1 className= "show-letters">{post.projectName}</h1>
+      <h2 className= "show-letters">{post.manager}</h2>
       
       <div>
-        <h2 className= "show-letters">Update this Car</h2>
-        <Form action={`/update/${post.id}`} method="post">
+        <h2 className= "show-letters">Update this Project</h2>
+        <Form action={`/update/${post._id}`} method="post">
           <input className= "form-letters"
             type="text"
-            name="make"
-            placeholder="make"
-            defaultValue={post.make}
+            name="projectName"
+            placeholder="projectName"
+            defaultValue={post.projectName}
           />
           <input className= "form-letters"
             type="text"
-            name="model"
-            placeholder="model"
-            defaultValue={post.model}
+            name="location"
+            placeholder={post.location}
+            defaultValue={post.location}
+          />
+          <input className= "form-letters"
+            type="number"
+            name="numberOfWorkers"
+            placeholder="numberOfWorkers"
+            defaultValue={post.numberOfWorkers}
           />
           <input className= "form-letters"
             type="text"
-            name="year"
-            placeholder="year"
-            defaultValue={post.year}
+            name="manager"
+            placeholder="manager"
+            defaultValue={post.manager}
           />
-          <input className= "form-letters"
-            type="text"
-            name="color"
-            placeholder="color"
-            defaultValue={post.color}
-          /><input className= "form-letters"
-          type="text"
-          name="price"
-          placeholder="price"
-          defaultValue={post.price}
-        />
           <button>Update Car</button>
         </Form>
-        <Form action={`/delete/${post.id}`} method="post">
+        <Form action={`/delete/${post._id}`} method="post">
             <button>Delete Car</button>
         </Form>
       </div>
