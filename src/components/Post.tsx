@@ -1,21 +1,30 @@
 import { Link } from "react-router-dom";
 import "../App.css"
 
-const Post = (props) => {
-  const post = props.post;
+interface PostProps {
+  post: {
+    _id: string;
+    projectName: string;
+    location: string;
+    numberOfWorkers: number;
+    manager: string;
+    // Add more properties here
+  };
+}
 
+const Post = ({ post }: PostProps) => {
   // style
-  const div = {
+  const div: React.CSSProperties = {
     padding: "40px",
     border: "3px solid",
     margin: "10px auto",
     width: "80%",
   };
-  console.log(post._id)
 
+  console.log(post._id);
 
   return (
-    <div style={div} className= "form-letters">
+    <div style={div} className="form-letters">
       <Link to={`/post/${post._id}`}>
         <h1>{post.projectName}</h1>
       </Link>

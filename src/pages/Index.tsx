@@ -3,7 +3,7 @@ import Post from "../components/Post";
 import "../App.css"
 
 interface Todo {
-  id: any;
+  _id: any;
   projectName: string,
   location: string,
   numberOfWorkers: number,
@@ -27,7 +27,7 @@ const Index: React.FC = (props) => {
       </Form>
   </div>
   <div className = "car"> 
-  {todos.map((post) => <Post key={post.id} post={post} />)}
+  {todos.map((post) => <Post key={post._id} post={post} />)}
   </div>
   </div>
 
