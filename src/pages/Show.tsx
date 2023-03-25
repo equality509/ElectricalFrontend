@@ -60,10 +60,10 @@ const Show = () => {
             placeholder="manager"
             defaultValue={post.manager}
           />
-          <button>Update Car</button>
+          <button>Update Project</button>
         </Form>
         <Form action={`/delete/${post._id}`} method="post">
-            <button>Delete Car</button>
+            <button>Delete Project</button>
         </Form>
       </div>
       <Link to="/">
