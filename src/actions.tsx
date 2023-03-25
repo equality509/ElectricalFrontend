@@ -53,7 +53,7 @@ export async function UpdateAction({ request, params }) {
 
   export async function DeleteAction({params}){
     //get the id
-    const id = params._id
+    const id = params.id
 
     // send request to delete
     await fetch(url + "/" + id + "/", {
