@@ -22,3 +22,4 @@ const router = createBrowserRouter(createRoutesFromElements(
 ))
 
 export default router
+
