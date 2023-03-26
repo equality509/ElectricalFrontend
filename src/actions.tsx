@@ -73,12 +73,13 @@ interface CreateActionProps {
 
 interface UpdateActionProps {
   request: any;
-  params: any;
+  params: { id?: string};
 }
 
 interface DeleteActionProps {
-  params: any;
+  params: { id?: string };
 }
+
 
 export async function CreateAction({ request }: CreateActionProps) {
   // get the form data
