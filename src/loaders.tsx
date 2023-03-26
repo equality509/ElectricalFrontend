@@ -16,6 +16,7 @@
 //     return data
 // }
 
+import { Params } from "react-router-dom";
 import url from "./urls";
 
 interface Post {
@@ -35,7 +36,14 @@ export async function IndexLoader(): Promise<Post[]> {
   return data;
 }
 
-export async function ShowLoader({ params }: { params: { id: string } }): Promise<Post> {
+// export async function ShowLoader({ params }: { params: { id: string } }): Promise<Post> {
+//   const response = await fetch(`${url}/${params.id}/`);
+//   const data = await response.json();
+//   console.log("SHOW LOADER:", data);
+//   return data;
+// }
+
+export async function ShowLoader({ params }: { params: Params<string> }): Promise<Post> {
   const response = await fetch(`${url}/${params.id}/`);
   const data = await response.json();
   console.log("SHOW LOADER:", data);
