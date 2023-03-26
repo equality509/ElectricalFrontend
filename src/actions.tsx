@@ -73,11 +73,11 @@ interface CreateActionProps {
 
 interface UpdateActionProps {
   request: any;
-  params: { id: string };
+  params: any;
 }
 
 interface DeleteActionProps {
-  params: { id: string };
+  params: any;
 }
 
 export async function CreateAction({ request }: CreateActionProps) {
